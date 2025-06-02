@@ -1,4 +1,4 @@
-import dotenv from 'dotenv/config'
+import 'dotenv/config'
 import { dbConnection } from './src/config/dbConnection.js';
 import server from './src/server.js';
 
@@ -11,7 +11,7 @@ const connect = async () => {
             console.log(`servidor escuchando en el puerto ${PORT}`);
         })
     } catch (error) {
-        return error.message
+        console.log(`Error al conectar: ${error.message}`);
     }
 }
 

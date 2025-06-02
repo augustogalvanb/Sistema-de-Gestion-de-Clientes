@@ -21,13 +21,15 @@ document.getElementById("registerForm").addEventListener("submit", async (event)
         // Mostrar mensaje de éxito
         alert("Cliente registrado exitosamente: " + response.data);
         
-        // Limpiar el formulario
-        document.getElementById("registerForm").reset();
     } catch (error) {
         console.error("Error al registrar cliente:", error);
         alert("Hubo un error al registrar el cliente: " + (error.response?.data?.error || error.message));
     }
 });
+
+document.getElementById('clearForm').addEventListener("click", () => {
+    document.getElementById("registerForm").reset();
+})
 
 // Iniciar notificaciones
 checkExpiredClients();
